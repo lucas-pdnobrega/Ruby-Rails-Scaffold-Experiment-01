@@ -1,0 +1,27 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "People" %>
+
+<h1>People</h1>
+
+<div id="people">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Abreviação</th>
+        <th scope="col">Data de Nascimento</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @people.each do |person| %>
+        <%= render_table_row(person) %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to "Cadastrar", new_person_path, class: "link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" %>

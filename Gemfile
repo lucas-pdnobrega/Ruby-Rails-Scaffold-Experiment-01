@@ -62,5 +62,6 @@ group :test do
   gem "selenium-webdriver"
 end
 
+# Add styling frameworks
 gem 'bootstrap'
 gem 'dartsass-sprockets'

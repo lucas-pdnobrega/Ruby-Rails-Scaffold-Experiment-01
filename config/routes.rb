@@ -3,10 +3,7 @@ Rails.application.routes.draw do
   root "home#index"
   get "home/index"
 
-  get "pessoas" => "people#index"
-
-  resources :emails, only: [:index, :create]
-  resources :people, except: [:index]
+  resources :people
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

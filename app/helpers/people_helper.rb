@@ -1,4 +1,15 @@
 module PeopleHelper
+
+    def render_people_navbar()
+        render_navbar(
+            raw("<span class='navbar-item'>
+                    <%= link_to 'Pessoas',
+                    people_path,
+                    class: 'nav-link'%>
+                </span>")
+        )
+    end
+
     def render_table_row(person)
         raw("<tr>
             <th scope='row'>#{person.id}</th>
@@ -10,7 +21,7 @@ module PeopleHelper
                 #{ link_to 'Editar', edit_person_path(person), class: 'link-opacity-100'}
             </td>
             <td>
-                #{ button_to 'Deletar', person, method: :delete, form_class: 'link-opacity-100'}
+                #{ button_to 'Deletar', person, method: :delete, class: 'btn btn-outline-secondary'}
             </td>
         </tr>")
     end

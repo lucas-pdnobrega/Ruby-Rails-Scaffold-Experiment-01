@@ -1,8 +1,27 @@
+<!--Replace the navbar below with layouts -->
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">
+      <%= link_to "Home",
+      root_path,
+      class: "nav-brand nav-link"%>        
+    </span>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <span class="navbar-item">
+          <%= link_to "Pessoas",
+          people_path,
+          class: "nav-link"%>
+        </span>
+    </div>
+  </div>
+</nav>
+
 <p style="color: green"><%= notice %></p>
 
 <% content_for :title, "People" %>
 
-<h1>People</h1>
+<h3>People</h3>
 
 <div id="people">
   <table class="table table-striped">
@@ -12,8 +31,12 @@
         <th scope="col">Nome</th>
         <th scope="col">Abreviação</th>
         <th scope="col">Data de Nascimento</th>
-        <th scope="col"></th>
-        <th scope="col"></th>
+        <th scope="col">Administração</th>
+        <th scope="col">
+          <%= link_to "Cadastrar",
+          new_person_path,
+          class: "btn btn-outline-success" %>
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -23,5 +46,3 @@
     </tbody>
   </table>
 </div>
-
-<%= link_to "Cadastrar", new_person_path, class: "link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" %>
